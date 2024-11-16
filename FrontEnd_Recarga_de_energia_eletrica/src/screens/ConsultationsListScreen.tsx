@@ -82,14 +82,8 @@ const ConsultationsListScreen = () => {
     <NativeBaseProvider>
       <Box flex={1} bg="white" p={4}>
         <HStack mb={4} justifyContent="space-between" alignItems="center">
-          <Text fontSize="xl" fontWeight="bold">Consultas</Text>
+          <Text fontSize="xl" fontWeight="bold">Status de Recarga</Text>
           <HStack space={2}>
-            <Button 
-              onPress={() => navigation.navigate('ScheduleConsultation')}
-              colorScheme="blue"
-            >
-              Nova Consulta
-            </Button>
             <Button 
               onPress={handleLogout}
               colorScheme="red"
@@ -98,6 +92,14 @@ const ConsultationsListScreen = () => {
             </Button>
           </HStack>
         </HStack>
+
+        <Button 
+              onPress={() => navigation.navigate('ScheduleConsultation')}
+              colorScheme="green"
+              mb={4} 
+            >
+              Nova Consulta
+            </Button>
 
         {error ? (
           <Text color="red.500">{error}</Text>

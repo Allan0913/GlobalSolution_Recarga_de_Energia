@@ -59,7 +59,10 @@ const AppNavigator = () => {
         name="ConsultationsList" 
         component={ConsultationsListScreen} 
         options={{ 
-          title: 'Minhas Consultas',
+          title: 'Status de automóveis elétricos',
+          headerStyle: {
+            backgroundColor: 'green',
+          },
           headerLeft: () => null, // Remove o botão de voltar
         }} 
       />
