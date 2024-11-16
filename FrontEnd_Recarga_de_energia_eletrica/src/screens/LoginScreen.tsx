@@ -42,7 +42,7 @@ const LoginScreen = ({ navigation }: Props) => {
   return (
     <NativeBaseProvider>
       <ImageBackground
-        source={require('../../assets/bg-agendamento.jpg')}
+        source={require('../../assets/planodefundo1.png')}
         style={styles.backgroundImage}
       >
         <Center flex={1}>
@@ -58,21 +58,21 @@ const LoginScreen = ({ navigation }: Props) => {
               <Text
                 fontSize="3xl"
                 fontWeight="bold"
-                color="#137181"
+                color="green.500"
                 textAlign="center"
                 mb={4}
               >
-                Minha Consulta
+                Tela de Login
               </Text>
 
               <Input
                 placeholder="Usuário"
                 size="lg"
                 borderRadius="lg"
-                borderColor="#137181"
+                borderColor="green.500"
                 backgroundColor="white"
                 _focus={{
-                  borderColor: "#FF6B35",
+                  borderColor: "green.500",
                   backgroundColor: "white",
                 }}
                 InputLeftElement={
@@ -80,7 +80,7 @@ const LoginScreen = ({ navigation }: Props) => {
                     as={<MaterialIcons name="person" />}
                     size={5}
                     ml={2}
-                    color="#137181"
+                    color="green.500"
                   />
                 }
                 value={username}
@@ -91,11 +91,11 @@ const LoginScreen = ({ navigation }: Props) => {
                 placeholder="Senha"
                 size="lg"
                 borderRadius="lg"
-                borderColor="#137181"
+                borderColor="green.500"
                 backgroundColor="white"
                 type={show ? "text" : "password"}
                 _focus={{
-                  borderColor: "#FF6B35",
+                  borderColor: "green.500",
                   backgroundColor: "white",
                 }}
                 InputLeftElement={
@@ -103,7 +103,7 @@ const LoginScreen = ({ navigation }: Props) => {
                     as={<MaterialIcons name="lock" />}
                     size={5}
                     ml={2}
-                    color="#137181"
+                    color="green.500"
                   />
                 }
                 InputRightElement={
@@ -122,8 +122,8 @@ const LoginScreen = ({ navigation }: Props) => {
 
               <Button
                 onPress={handleLogin}
-                bg="#137181"
-                _pressed={{ bg: "#0D5561" }}
+                bg="green.500"
+                _pressed={{ bg: "green.700" }}
                 size="lg"
                 rounded="lg"
                 shadow={3}
@@ -134,12 +134,12 @@ const LoginScreen = ({ navigation }: Props) => {
               <Button
                 onPress={() => navigation.navigate("SignUp")}
                 variant="outline"
-                borderColor="#FF6B35"
-                _text={{ color: "#FF6B35" }}
+                borderColor="green.500"
+                _text={{ color: "green.500" }}
                 size="lg"
                 rounded="lg"
                 _pressed={{
-                  bg: "rgba(255, 107, 53, 0.1)",
+                  bg: "green.100",
                 }}
               >
                 Criar Conta
