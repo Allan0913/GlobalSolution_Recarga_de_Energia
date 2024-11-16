@@ -6,6 +6,7 @@ import {
   Input,
   Center,
   Text,
+  VStack,
 } from "native-base";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../navigation/AppNavigator"; 
@@ -63,29 +64,74 @@ const SignUpScreen = ({ navigation }: Props) => {
             borderRadius="lg" // Bordas arredondadas para o efeito de cartão
             shadow={2} // Sombra para dar destaque
           >
-      <Text style={{paddingBottom: 20, textAlign: 'center', fontSize: 24}}>Cadastre-se</Text>
+              <VStack space={5}>
+              <Text
+                fontSize="3xl"
+                fontWeight="bold"
+                color="green.500"
+                textAlign="center"
+                mb={4}>Cadastre-se</Text>
           <Input
             placeholder="Nome de Usuário"
-            mb={4}
+            size="lg"
+            borderRadius="lg"
+            borderColor="green.500"
+            backgroundColor="white"
+            _focus={{
+              borderColor: "green.500",
+              backgroundColor: "white",
+            }}
+            _hover={{
+              borderColor: "green.400",
+            }}
             value={username}
             onChangeText={setUsername}
           />
           <Input
-            placeholder="Senha"
-            mb={4}
+                placeholder="Senha"
+                size="lg"
+                borderRadius="lg"
+                borderColor="green.500"
+                backgroundColor="white"
+                _focus={{
+                  borderColor: "green.500",
+                  backgroundColor: "white",
+                }}
+                _hover={{
+                  borderColor: "green.400",
+                }}
             secureTextEntry
             value={password}
             onChangeText={setPassword}
           />
           <Input
             placeholder="Confirmar Senha"
-            mb={4}
+            size="lg"
+            borderRadius="lg"
+            borderColor="green.500"
+            backgroundColor="white"
+            _focus={{
+              borderColor: "green.500",
+              backgroundColor: "white",
+            }}
+            _hover={{
+              borderColor: "green.400",
+            }}
             secureTextEntry
             value={confirmPassword}
             onChangeText={setConfirmPassword}
           />
           {message ? <Text color="red.500">{message}</Text> : null}
-          <Button onPress={handleSignUp}>Criar Conta</Button>
+          <Button onPress={handleSignUp} 
+                bg="green.500"
+                _pressed={{ bg: "green.700" }}
+                size="lg"
+                rounded="lg"
+                shadow={3}
+                _hover={{
+                  backgroundColor: "green.600",
+                }}>Criar Conta</Button>
+          </VStack>
         </Box>
       </Center>
     </NativeBaseProvider>

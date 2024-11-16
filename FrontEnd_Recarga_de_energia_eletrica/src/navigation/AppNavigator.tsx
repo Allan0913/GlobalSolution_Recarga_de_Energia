@@ -50,7 +50,7 @@ const AppNavigator = () => {
         options={{ 
           title: 'Criar Conta',
           headerStyle: {
-            backgroundColor: '#137181',
+            backgroundColor: 'green',
           },
           headerTintColor: '#fff',
         }} 

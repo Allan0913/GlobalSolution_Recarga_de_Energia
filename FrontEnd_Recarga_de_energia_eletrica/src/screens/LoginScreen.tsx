@@ -75,6 +75,9 @@ const LoginScreen = ({ navigation }: Props) => {
                   borderColor: "green.500",
                   backgroundColor: "white",
                 }}
+                _hover={{
+                  borderColor: "green.400",
+                }}
                 InputLeftElement={
                   <Icon
                     as={<MaterialIcons name="person" />}
@@ -97,6 +100,9 @@ const LoginScreen = ({ navigation }: Props) => {
                 _focus={{
                   borderColor: "green.500",
                   backgroundColor: "white",
+                }}
+                _hover={{
+                  borderColor: "green.400",
                 }}
                 InputLeftElement={
                   <Icon
@@ -127,6 +133,9 @@ const LoginScreen = ({ navigation }: Props) => {
                 size="lg"
                 rounded="lg"
                 shadow={3}
+                _hover={{
+                  backgroundColor: "green.600",
+                }}
               >
                 Entrar
               </Button>
