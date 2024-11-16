@@ -4,7 +4,7 @@ const authRoutes = require('./routes/auth');
 const consultationsRoute = require('./routes/ConsultationsRoute'); 
 
 const app = express();
-const PORT = 3000;
+const PORT = 30001;
 
 app.use(cors());
 app.use(express.json());
