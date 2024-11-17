@@ -1,10 +1,11 @@
 import React, { useState, useCallback } from "react";
 import { RefreshControl } from "react-native";
-import { NativeBaseProvider, FlatList, Box, Text, Button, VStack, HStack } from "native-base";
+import { NativeBaseProvider, FlatList, Box, Text, Button, VStack, HStack, Icon } from "native-base";
 import { getConsultations } from "../api/consultations";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../navigation/AppNavigator";
+import { MaterialIcons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface Consultation {
@@ -82,11 +83,19 @@ const ConsultationsListScreen = () => {
     <NativeBaseProvider>
       <Box flex={1} bg="white" p={4}>
         <HStack mb={4} justifyContent="space-between" alignItems="center">
-          <Text fontSize="xl" fontWeight="bold">Status de Recarga</Text>
+          <Text fontSize="xl" fontWeight="bold" fontFamily="sans-serif">Status de Recarga</Text>
           <HStack space={2}>
             <Button 
               onPress={handleLogout}
               colorScheme="red"
+              leftIcon={
+                <Icon 
+                  as={MaterialIcons} 
+                  name="logout" 
+                  size="sm" 
+                  color="white" 
+                />
+              }
             >
               Sair
             </Button>
@@ -98,6 +107,7 @@ const ConsultationsListScreen = () => {
               colorScheme="green"
               mb={4} 
             >
+              
               Nova Consulta
             </Button>
 
