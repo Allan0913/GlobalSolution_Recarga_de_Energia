@@ -53,7 +53,7 @@ const SignUpScreen = ({ navigation }: Props) => {
   return (
     <NativeBaseProvider>
       <ImageBackground
-      source={require('../../assets/planodefundo.png')} 
+      source={require('../../assets/planodefundo3.jpg')} 
       style={{ flex: 1, width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
       ></ImageBackground>     
       <Center flex={1}>

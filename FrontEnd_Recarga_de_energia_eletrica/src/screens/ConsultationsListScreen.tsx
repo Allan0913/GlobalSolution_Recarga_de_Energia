@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { RefreshControl } from "react-native";
+import { ImageBackground, RefreshControl } from "react-native";
 import { NativeBaseProvider, FlatList, Box, Text, Button, VStack, HStack, Icon } from "native-base";
 import { getConsultations } from "../api/consultations";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
@@ -68,20 +68,40 @@ const ConsultationsListScreen = () => {
       p={4}
       mb={2}
       bg="white"
+      shadow={2} // Sombra para dar mais destaque ao card
     >
+      {/* Header */}
+      <HStack justifyContent="center" alignItems="center" mb={3}>
+        <Text fontWeight="bold" fontSize="lg" color="primary.600">
+          Detalhes do Status
+        </Text>
+      </HStack>
+  
+      {/* Body */}
       <VStack space={2}>
-        <Text fontWeight="bold">Paciente: {item.username}</Text>
+        <Text fontWeight="bold">Usuário: {item.username}</Text>
+        <Text>Fonte de Energia Utilizada: {item.doctor}</Text>
+        <Text>Período do dia: {item.specialty}</Text>
         <Text>Data: {new Date(item.date).toLocaleDateString()}</Text>
-        <Text>Médico: {item.doctor}</Text>
-        <Text>Especialidade: {item.specialty}</Text>
-        <Text>Status: {item.status}</Text>
+        <Text fontWeight="bold" color="emerald.500">Status: {item.status}</Text>
       </VStack>
+  
+      {/* Footer */}
+      <Box mt={4} py={2} bg="coolGray.50" borderRadius="md">
+        <Text textAlign="center" fontWeight="medium" color="coolGray.700">
+          Agendamento realizada com sucesso.
+        </Text>
+      </Box>
     </Box>
   );
 
   return (
     <NativeBaseProvider>
-      <Box flex={1} bg="white" p={4}>
+      <ImageBackground
+      source={require('../../assets/tela1.jpg')} 
+      style={{ flex: 1, width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
+      ></ImageBackground> 
+      <Box flex={1} bg="" p={4}>
         <HStack mb={4} justifyContent="space-between" alignItems="center">
           <Text fontSize="xl" fontWeight="bold" fontFamily="sans-serif">Status de Recarga</Text>
           <HStack space={2}>
@@ -105,10 +125,11 @@ const ConsultationsListScreen = () => {
         <Button 
               onPress={() => navigation.navigate('ScheduleConsultation')}
               colorScheme="green"
-              mb={4} 
+              mb={4}
+              fontFamily="sans-serif" 
             >
               
-              Nova Consulta
+              Agendar Recarga do seu veículo
             </Button>
 
         {error ? (

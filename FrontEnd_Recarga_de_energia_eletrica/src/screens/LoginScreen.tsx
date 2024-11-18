@@ -42,7 +42,7 @@ const LoginScreen = ({ navigation }: Props) => {
   return (
     <NativeBaseProvider>
       <ImageBackground
-        source={require('../../assets/planodefundo2.png')}
+        source={require('../../assets/planodefundo3.jpg')}
         style={styles.backgroundImage}
       >
         <Center flex={1}>

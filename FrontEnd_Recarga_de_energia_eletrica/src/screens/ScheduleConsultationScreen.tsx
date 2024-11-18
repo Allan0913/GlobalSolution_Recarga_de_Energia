@@ -135,7 +135,7 @@ const ScheduleConsultationScreen = ({ navigation }: Props) => {
         date: date.toISOString(),
         doctor,
         specialty,
-        status: "Agendada",
+        status: "Carregando...",
       };
 
       await createConsultation(consultationData);
