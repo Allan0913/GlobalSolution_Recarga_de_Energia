@@ -48,23 +48,13 @@ const ScheduleConsultationScreen = ({ navigation }: Props) => {
   const specialties = [
     "Cardiologia",
     "Dermatologia",
-    "Ortopedia",
-    "Pediatria",
-    "Clínico Geral",
-    "Ginecologia",
-    "Oftalmologia",
-    "Psiquiatria",
+
   ];
 
   const doctors = {
     Cardiologia: ["Dr. João Silva", "Dra. Maria Santos"],
     Dermatologia: ["Dra. Ana Lima", "Dr. Pedro Costa"],
-    Ortopedia: ["Dr. Carlos Oliveira", "Dra. Paula Souza"],
-    Pediatria: ["Dra. Juliana Martins", "Dr. Roberto Alves"],
-    "Clínico Geral": ["Dr. Fernando Pereira", "Dra. Camila Costa"],
-    Ginecologia: ["Dra. Beatriz Santos", "Dra. Luciana Lima"],
-    Oftalmologia: ["Dr. Marcos Silva", "Dra. Patricia Oliveira"],
-    Psiquiatria: ["Dr. Ricardo Souza", "Dra. Amanda Costa"],
+
   };
 
   const minDate = useMemo(() => {
@@ -164,9 +154,9 @@ const ScheduleConsultationScreen = ({ navigation }: Props) => {
         <Center flex={1} bg="white" px={4} py={6}>
           <VStack space={4} width="100%">
             <FormControl isRequired>
-              <FormControl.Label>Especialidade</FormControl.Label>
+              <FormControl.Label>Fontes de Energia</FormControl.Label>
               <Select
-                placeholder="Selecione a especialidade"
+                placeholder="Selecione uma Fonte de Energia"
                 selectedValue={specialty}
                 onValueChange={(value) => {
                   setSpecialty(value);
@@ -184,12 +174,17 @@ const ScheduleConsultationScreen = ({ navigation }: Props) => {
                   <Select.Item key={spec} label={spec} value={spec} />
                 ))}
               </Select>
+              <FormControl.HelperText >
+              <Text textAlign="justify" color="red.500" fontSize="12px">
+    AVISO! Prioridade na energia solar e eólica e elétrica, por ser de uma fonte de energia renovável e não prejudicial ao planeta Terra.
+  </Text>
+              </FormControl.HelperText>
             </FormControl>
 
             <FormControl isRequired isDisabled={!specialty}>
-              <FormControl.Label>Médico</FormControl.Label>
+              <FormControl.Label>Período do dia</FormControl.Label>
               <Select
-                placeholder="Selecione o médico"
+                placeholder="Selecione o Período do dia"
                 selectedValue={doctor}
                 onValueChange={setDoctor}
                 bg="white"
@@ -205,10 +200,15 @@ const ScheduleConsultationScreen = ({ navigation }: Props) => {
                     <Select.Item key={doc} label={doc} value={doc} />
                   ))}
               </Select>
+              <FormControl.HelperText>
+                <Text textAlign="justify" color="red.500" fontSize="12px">
+                AVISO! Prioridade no período da noite, por ser um periodo de menor demanda.
+                </Text>
+              </FormControl.HelperText>
             </FormControl>
 
             <FormControl isRequired>
-              <FormControl.Label>Data da Consulta</FormControl.Label>
+              <FormControl.Label>Data do agendamento</FormControl.Label>
               <Pressable onPress={() => setShowCalendar(true)}>
                 <Box
                   borderWidth={1}
@@ -231,7 +231,10 @@ const ScheduleConsultationScreen = ({ navigation }: Props) => {
                 </Box>
               </Pressable>
               <FormControl.HelperText>
-                Selecione uma data entre {formatDate(minDate)} e {formatDate(maxDate)}
+                <Text textAlign="justify" color="coolGray.400" fontSize="12px">
+                Selecione uma data para marcar o seu agendamento da recarga do seu veículo.
+                </Text>
+
               </FormControl.HelperText>
             </FormControl>
 
@@ -265,8 +268,9 @@ const ScheduleConsultationScreen = ({ navigation }: Props) => {
               isLoading={loading}
               isLoadingText="Agendando..."
               mt={4}
-              bg="#137181"
-              _pressed={{ bg: "#0D5561" }}
+              bg="success.500"
+              _hover={{backgroundColor: "success.600"}}
+              _pressed={{ bg: "success.600" }}
               size="lg"
               borderRadius="lg"
               leftIcon={<Icon as={<MaterialIcons name="check" />} size="sm" />}

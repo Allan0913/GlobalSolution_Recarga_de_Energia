@@ -70,7 +70,10 @@ const AppNavigator = () => {
         name="ScheduleConsultation" 
         component={ScheduleConsultationScreen} 
         options={{ 
-          title: 'Agendar Consulta',
+          title: 'Agendar Recarga',
+          headerStyle: {
+            backgroundColor: 'green',
+          },
         }} 
       />
       <Stack.Screen 
