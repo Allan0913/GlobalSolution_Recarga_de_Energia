@@ -46,15 +46,18 @@ const ScheduleConsultationScreen = ({ navigation }: Props) => {
   const [loading, setLoading] = useState(false);
 
   const specialties = [
-    "Cardiologia",
-    "Dermatologia",
+    "Elétrica",
+    "Solar",
+    "Eólica",
+    "Hidrelétrica",
 
   ];
 
   const doctors = {
-    Cardiologia: ["Dr. João Silva", "Dra. Maria Santos"],
-    Dermatologia: ["Dra. Ana Lima", "Dr. Pedro Costa"],
-
+    Elétrica: ["Dia", "Tarde", "Noite (Prioridade)"],
+    Solar: ["Dia", "Tarde", "Noite (Prioridade)"],
+    Eólica: ["Dia", "Tarde", "Noite (Prioridade)"],
+    Hidrelétrica: ["Dia", "Tarde", "Noite (Prioridade)"],
   };
 
   const minDate = useMemo(() => {

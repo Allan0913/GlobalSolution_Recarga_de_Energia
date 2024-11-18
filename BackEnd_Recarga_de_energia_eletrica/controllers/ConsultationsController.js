@@ -119,9 +119,29 @@ const updateConsultation = (req, res) => {
   });
 };
 
+
+const deleteConsultation = async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Verifique se a consulta existe e exclua
+    const result = await Consultation.destroy({ where: { id } });
+    if (result) {
+      return res.status(200).json({ message: 'Consulta excluída com sucesso!' });
+    } else {
+      return res.status(404).json({ message: 'Consulta não encontrada' });
+    }
+  } catch (error) {
+    console.error("Erro ao excluir consulta:", error);
+    return res.status(500).json({ message: 'Erro ao excluir consulta' });
+  }
+};
+
+
+
 module.exports = {
   getAllConsultations,
   createConsultation,
   updateConsultation,
+  deleteConsultation,
   getUserRole,
 };

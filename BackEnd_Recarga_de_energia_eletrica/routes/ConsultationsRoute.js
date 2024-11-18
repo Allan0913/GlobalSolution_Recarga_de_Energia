@@ -6,6 +6,7 @@ const authMiddleware = require('../middleware/auth');
 router.get('/consultations', consultationsController.getAllConsultations);
 router.post('/consultations', authMiddleware, consultationsController.createConsultation);
 router.put('/consultations/:id', authMiddleware, consultationsController.updateConsultation);
+router.delete('/consultations/:id', authMiddleware, consultationsController.deleteConsultation);
 router.get('/user-role', consultationsController.getUserRole);
 
 module.exports = router;

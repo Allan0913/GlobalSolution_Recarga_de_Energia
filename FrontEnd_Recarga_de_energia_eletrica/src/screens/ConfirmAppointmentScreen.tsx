@@ -35,23 +35,24 @@ const ConfirmAppointmentScreen = ({ navigation, route }: Props) => {
       <Center flex={1} bg="white" p={4}>
         <Box bg="green.100" p={4} rounded="md" width="100%" maxWidth={400}>
           <VStack space={4} alignItems="center">
-            <Text fontSize="xl" fontWeight="bold" color="green.600">
-              Consulta agendada com sucesso!
+            <Text fontSize="xl" fontWeight="bold" color="green.600" textAlign="center">
+              Recarga agendada com sucesso!
             </Text>
             
             {consultationData && (
               <VStack space={2} width="100%">
+
                 <Text>
-                  <Text bold>Data: </Text>
-                  {consultationData.date}
+                  <Text bold>Fonte de Energia: </Text>
+                  {consultationData.specialty}
                 </Text>
                 <Text>
-                  <Text bold>Médico: </Text>
+                  <Text bold>Período: </Text>
                   {consultationData.doctor}
                 </Text>
                 <Text>
-                  <Text bold>Especialidade: </Text>
-                  {consultationData.specialty}
+                  <Text bold>Data: </Text>
+                  {consultationData.date}
                 </Text>
               </VStack>
             )}
