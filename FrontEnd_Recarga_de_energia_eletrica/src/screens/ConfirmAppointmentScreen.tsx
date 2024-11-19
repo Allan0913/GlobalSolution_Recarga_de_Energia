@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NativeBaseProvider, Box, Button, Center, Text, VStack } from "native-base";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from '@react-navigation/native';
@@ -29,6 +29,8 @@ const ConfirmAppointmentScreen = ({ navigation, route }: Props) => {
       routes: [{ name: 'ConsultationsList' }],
     });
   };
+
+
 
   return (
     <NativeBaseProvider>

@@ -20,6 +20,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Calendar } from 'react-native-calendars';
 import { MaterialIcons } from "@expo/vector-icons";
 import { getUserData, createConsultation } from '../api/consultations';
+import axios from "axios";
 
 type ScheduleConsultationScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -104,6 +105,10 @@ const ScheduleConsultationScreen = ({ navigation }: Props) => {
       );
     }
   };
+
+  
+  
+
 
   const handleSubmit = async () => {
     try {

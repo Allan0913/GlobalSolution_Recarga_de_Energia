@@ -74,6 +74,8 @@ const ConsultationsListScreen = () => {
       }
     }
   };
+
+  
   
   useFocusEffect(
     useCallback(() => {
