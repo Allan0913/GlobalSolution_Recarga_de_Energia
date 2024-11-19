@@ -110,10 +110,10 @@ const ConsultationsListScreen = () => {
   {/* Footer */}
   <Box mt={4} py={2} bg="coolGray.50" borderRadius="md">
     <HStack justifyContent="space-between" space={2}>
-      <Button onPress={() => deleteConsultation(item.id)} colorScheme="red">
-        Cancelar Agendamento
+      <Button onPress={() => deleteConsultation(item.id)} colorScheme="red" startIcon={<Icon as={MaterialIcons} name="delete" size="sm" />}>
+        Apagar
       </Button>
-      <Button colorScheme="primary">
+      <Button colorScheme="primary" startIcon={<Icon as={MaterialIcons} name="edit" size="sm" />}>
         Atualizar
       </Button>
     </HStack>
