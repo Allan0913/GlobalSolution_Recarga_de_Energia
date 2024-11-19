@@ -57,23 +57,30 @@ const ConsultationsListScreen = () => {
 
   const deleteConsultation = async (id: number) => {
     try {
-      const response = await axios.delete(`/consultations/${id}`);
-      console.log(response.data.message); // Exibe a mensagem de sucesso
-      // Atualiza o estado para remover a consulta da lista após a exclusão
-      setConsultations((prevConsultations) =>
-        prevConsultations.filter((consultation) => consultation.id !== id)
-      );
-    } catch (error: unknown) {
-      // Verificar se o erro possui a propriedade 'response'
-      if (axios.isAxiosError(error)) {
-        // Agora podemos acessar safely `error.response`
-        console.error("Erro ao deletar consulta:", error.response?.data || error.message);
+      const response = await fetch(`/consultations/${id}`, {
+        method: 'DELETE', // Método HTTP para exclusão
+        headers: {
+          'Content-Type': 'application/json', // Informando que a requisição é em JSON
+        },
+      });
+  
+      if (response.ok) {
+        // Se a exclusão for bem-sucedida, atualiza a lista de consultas
+        setConsultations((prevConsultations) =>
+          prevConsultations.filter((consultation) => consultation.id !== id)
+        );
+        console.log("Consulta excluída com sucesso.");
       } else {
-        // Se o erro não for relacionado ao Axios, você pode tratar de outra forma
-        console.error("Erro desconhecido:", error);
+        const errorData = await response.json(); // Pega a resposta de erro
+        console.error("Erro ao excluir consulta:", errorData.message || "Erro desconhecido");
       }
+    } catch (error) {
+      console.error("Erro desconhecido ao excluir consulta:", error);
     }
   };
+  
+  
+  
 
   
   

@@ -120,21 +120,22 @@ const updateConsultation = (req, res) => {
 };
 
 
-const deleteConsultation = async (req, res) => {
+const deleteConsultation = (req, res) => {
   const { id } = req.params;
-  try {
-    // Verifique se a consulta existe e exclua
-    const result = await Consultation.destroy({ where: { id } });
-    if (result) {
-      return res.status(200).json({ message: 'Consulta excluída com sucesso!' });
-    } else {
+
+  const sql = `DELETE FROM consultations WHERE id = ?`;
+  db.run(sql, [id], function (err) {
+    if (err) {
+      console.error("Erro ao excluir consulta:", err.message);
+      return res.status(500).json({ message: 'Erro ao excluir consulta' });
+    }
+    if (this.changes === 0) {
       return res.status(404).json({ message: 'Consulta não encontrada' });
     }
-  } catch (error) {
-    console.error("Erro ao excluir consulta:", error);
-    return res.status(500).json({ message: 'Erro ao excluir consulta' });
-  }
+    return res.status(200).json({ message: 'Consulta excluída com sucesso!' });
+  });
 };
+
 
 
 
