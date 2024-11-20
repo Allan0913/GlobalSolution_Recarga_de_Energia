@@ -120,6 +120,9 @@ const updateConsultation = (req, res) => {
 };
 
 
+
+
+
 const deleteConsultation = (req, res) => {
   const { id } = req.params;
 
