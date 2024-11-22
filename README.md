@@ -50,3 +50,8 @@ em seguida, tenta dar "npm start", assim ele funcionará.
 OBS: caso der algum erro na tsconfig.json ou em outros códigos, recomendo dar CRTL + SHIFT + P e em seguida achar "TypeScript: Restart TS Server" e em seguida reniciar o VScode! :)
 
 ## As Telas Do Projeto
+
+
+Tela de Login:
+
+https://github.com/Allan0913/GlobalSolution_Recarga_de_Energia/issues/5#issue-2684155894
