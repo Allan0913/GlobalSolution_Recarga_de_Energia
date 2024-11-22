@@ -82,6 +82,9 @@ const AppNavigator = () => {
         options={{ 
           title: 'Confirmação',
           headerLeft: () => null, // Remove o botão de voltar
+          headerStyle: {
+            backgroundColor: 'green',
+          },
         }} 
       />
     </Stack.Navigator>
