@@ -29,7 +29,7 @@ Certifique-se de ter o **Node.js** e o **npm** instalados em sua máquina.
 
 ### 2. Rodando o APP
 
-*Esse APP tem 2 pastas (Backend e Frontend), vou mostrar como rodar no pc.
+Esse APP tem 2 pastas (Backend e Frontend), vou mostrar como rodar no pc.
 
 1° Passo
 
