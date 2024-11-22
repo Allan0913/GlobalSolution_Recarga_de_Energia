@@ -1,5 +1,11 @@
 # GlobalSolution_Recarga_de_Energia - Projeto de Monitoramento de Recarga de Veículos Elétricos
 
+## Integrantes do grupo:
+
+- Allan Huang RM: 93400
+- Rafael Taborda Rodrigues RM: 94588
+- João Ortega Cabral Olim RM: 94163 
+
 Este projeto foi desenvolvido como parte de um sistema de **monitoramento e gerenciamento de recarga de veículos elétricos**, com ênfase no uso de **fontes renováveis** e **otimização de consumo** em horários de menor demanda. O aplicativo permite aos usuários marcar, gerenciar e visualizar status de recarga para veículos elétricos, além de permitir um login seguro e gerenciamento administrativo.
 
 ## Tecnologias Utilizadas
