@@ -48,3 +48,5 @@ vai no terminal do frontend e dá "pip install" para instalar todas as bilioteca
 em seguida, tenta dar "npm start", assim ele funcionará.
 
 OBS: caso der algum erro na tsconfig.json ou em outros códigos, recomendo dar CRTL + SHIFT + P e em seguida achar "TypeScript: Restart TS Server" e em seguida reniciar o VScode! :)
+
+## As Telas Do Prpjeto
